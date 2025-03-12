@@ -427,14 +427,14 @@ useEffect(() => {
                   [...Array(gridSize)].map((_, colIndex) => {
                     const index = rowIndex * dotsCount + colIndex;
                     const isDrawn = horizontalLines[index];
-                    let lineColor = 'bg-gray-400 bg-opacity-30';
-                    let hoverColor = 'hover:bg-gray-500 hover:bg-opacity-60';
+                    let lineColor = 'bg-gray-300 bg-opacity-20';
+                    let hoverColor = 'hover:bg-gray-500 hover:bg-opacity-40';
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'horizontal' && lastDrawnLine.index === index) {
                         lineColor = currentPlayer === 'red' ? 'bg-red-600' : 'bg-blue-600';
                       } else {
-                        lineColor = 'bg-gray-500';
+                        lineColor = 'bg-gray-400';
                       }
                       hoverColor = '';
                     }
@@ -461,14 +461,14 @@ useEffect(() => {
                   [...Array(gridSize + 1)].map((_, colIndex) => {
                     const index = colIndex * gridSize + rowIndex;
                     const isDrawn = verticalLines[index];
-                    let lineColor = 'bg-gray-400 bg-opacity-30';
-                    let hoverColor = 'hover:bg-gray-500 hover:bg-opacity-60';
+                    let lineColor = 'bg-gray-300 bg-opacity-20';
+                    let hoverColor = 'hover:bg-gray-500 hover:bg-opacity-40';
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'vertical' && lastDrawnLine.index === index) {
                         lineColor = currentPlayer === 'red' ? 'bg-red-500' : 'bg-blue-500';
                       } else {
-                        lineColor = 'bg-gray-800';
+                        lineColor = 'bg-gray-400';
                       }
                       hoverColor = '';
                     }

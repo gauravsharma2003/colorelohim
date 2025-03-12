@@ -432,7 +432,7 @@ useEffect(() => {
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'horizontal' && lastDrawnLine.index === index) {
-                        lineColor = currentPlayer === 'red' ? 'bg-blue-500' : 'bg-red-500';
+                        lineColor = currentPlayer === 'red' ? 'bg-red-600' : 'bg-blue-600';
                       } else {
                         lineColor = 'bg-gray-500';
                       }

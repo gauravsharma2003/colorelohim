@@ -62,8 +62,8 @@ const DotsAndBoxesGame = () => {
 useEffect(() => {
     // For development, use localhost; for production, use relative path
     const socketUrl = process.env.NODE_ENV === 'production' 
-      ? '/' 
-      : 'http://localhost:3001/';
+      ? 'https://dotandbox-production.up.railway.app' 
+      : 'https://dotandbox-production.up.railway.app';
       
     const newSocket = io(socketUrl, {
       path: '/socket.io',

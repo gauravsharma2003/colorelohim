@@ -495,7 +495,7 @@ useEffect(() => {
                   [...Array(dotsCount)].map((_, colIndex) => (
                     <div
                       key={`dot-${rowIndex}-${colIndex}`}
-                      className="absolute bg-indigo-800 rounded-full shadow-sm"
+                      className="absolute bg-indigo-500 rounded-full shadow-sm"
                       style={{
                         left: `${colIndex * cellSize}px`,
                         top: `${rowIndex * cellSize}px`,

@@ -57,8 +57,18 @@ const DotsAndBoxesGame = () => {
     }
   }, []);
   
-  useEffect(() => {
-    const newSocket = io('http://localhost:3001/');
+ // Replace this part in your DotsAndBoxesGame.jsx file:
+
+useEffect(() => {
+    // For development, use localhost; for production, use relative path
+    const socketUrl = process.env.NODE_ENV === 'production' 
+      ? '/' 
+      : 'http://localhost:3001/';
+      
+    const newSocket = io(socketUrl, {
+      path: '/socket.io',
+    });
+    
     setSocket(newSocket);
     
     newSocket.on('connect', () => {
@@ -73,13 +83,14 @@ const DotsAndBoxesGame = () => {
       } else {
         newSocket.emit('createGame');
       }
-
+  
       newSocket.emit('getAllGames');
     });
     
     newSocket.on('connect_error', (error) => {
-      setConnectionError('Failed to connect to the game server. Please check if the server is running.');
+      setConnectionError('Failed to connect to the game server.');
       setIsConnected(false);
+      console.error('Socket connection error:', error);
     });
     
     return () => {

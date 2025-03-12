@@ -432,9 +432,9 @@ useEffect(() => {
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'horizontal' && lastDrawnLine.index === index) {
-                        lineColor = currentPlayer === 'red' ? 'bg-red-500' : 'bg-blue-500';
+                        lineColor = currentPlayer === 'red' ? 'bg-blue-500' : 'bg-red-500';
                       } else {
-                        lineColor = 'bg-gray-800';
+                        lineColor = 'bg-gray-500';
                       }
                       hoverColor = '';
                     }

@@ -57,13 +57,12 @@ const DotsAndBoxesGame = () => {
     }
   }, []);
   
- // Replace this part in your DotsAndBoxesGame.jsx file:
+
 
 useEffect(() => {
-    // For development, use localhost; for production, use relative path
     const socketUrl = process.env.NODE_ENV === 'production' 
       ? 'https://dotandbox-production.up.railway.app' 
-      : 'https://dotandbox-production.up.railway.app';
+      : 'http://localhost:3001';
       
     const newSocket = io(socketUrl, {
       path: '/socket.io',
@@ -432,7 +431,7 @@ useEffect(() => {
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'horizontal' && lastDrawnLine.index === index) {
-                        lineColor = currentPlayer === 'red' ? 'bg-red-600' : 'bg-blue-600';
+                        lineColor = currentPlayer === 'red' ? 'bg-blue-500' : 'bg-red-500';
                       } else {
                         lineColor = 'bg-zinc-900';
                       }
@@ -466,7 +465,7 @@ useEffect(() => {
                     
                     if (isDrawn) {
                       if (lastDrawnLine && lastDrawnLine.type === 'vertical' && lastDrawnLine.index === index) {
-                        lineColor = currentPlayer === 'red' ? 'bg-red-500' : 'bg-blue-500';
+                        lineColor = currentPlayer === 'red' ? 'bg-blue-500' : 'bg-red-500';
                       } else {
                         lineColor = 'bg-zinc-900';
                       }
